@@ -1,10 +1,10 @@
 # delay-promise-func
 
-[![Coverage Status](https://coveralls.io/repos/github/artemdudkin/delay-promise-func/badge.svg)](https://coveralls.io/github/artemdudkin/delay-promise-func)[![Build Status](https://api.travis-ci.org/artemdudkin/delay-promise-func.svg?branch=master)](https://api.travis-ci.org/artemdudkin/delay-promise-func.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/artemdudkin/delay-promise-func/badge.svg)](https://coveralls.io/github/artemdudkin/delay-promise-func) [![Build Status](https://api.travis-ci.org/artemdudkin/delay-promise-func.svg?branch=master)](https://api.travis-ci.org/artemdudkin/delay-promise-func.svg?branch=master)
 
 Function that returns promise that wait specified milliseconds and then call specified function.
 
-## Example (and loader)
+## Example
 
 ```js
 const delayed = require('delay-promise-func');
