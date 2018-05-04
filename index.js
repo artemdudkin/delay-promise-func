@@ -1,3 +1,5 @@
+const promisify = require('promisify-func');
+
 /** Waits a bit and then call function
  *
  * @param {Function} func - function to call
@@ -5,35 +7,14 @@
  *
  * @returns Promise
  */
-const deferred = (func, delay) => {
+const delayed = (func, delay) => {
     return (...rest) => {
         return new Promise((resolve, reject) => {
             setTimeout(function () {
-                let res;
-                let err;
-                try {
-                    res = func.apply(this, rest);
-                } catch (e) {
-                    err = e;
-                }
-                if (err) {
-                    reject(err);
-                } else {
-                    if (typeof res.then != 'function') {
-                        resolve( res );
-                    } else {
-                        res
-                        .then(res=>{
-                            resolve(res);
-                        })
-                        .catch(err=>{
-                            reject(err);
-                        })
-                    }
-                }
+                resolve(promisify(func).apply(this, rest));
             }, delay);
         })
     }
 }
 
-module.exports = deferred;
+module.exports = delayed;

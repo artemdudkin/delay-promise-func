@@ -2,14 +2,14 @@
   "author": "Artem Dudkin <sheeva@list.ru>",
   "name": "delay-promise-func",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "url": "git@github.com:artemdudkin/delay-promise-func.git"
   },
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha test/test*",
+    "test": "node_modules/.bin/mocha test*",
     "coverage": "./node_modules/.bin/istanbul cover -x test* node_modules/.bin/_mocha -- test*",
     "coveralls": "./node_modules/.bin/istanbul cover -x test* ./node_modules/.bin/_mocha --report lcovonly -- test* && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -fr ./coverage"
   },
@@ -22,7 +22,9 @@
     "webpack": "^4.6.0",
     "webpack-cli": "^2.1.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "promisify-func": "0.0.1"
+  },
   "keywords": [
     "delay",
     "promise"
