@@ -2,7 +2,7 @@
   "author": "Artem Dudkin <sheeva@list.ru>",
   "name": "delay-promise-func",
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "git@github.com:artemdudkin/delay-promise-func.git"
@@ -23,7 +23,7 @@
     "webpack-cli": "^2.1.2"
   },
   "dependencies": {
-    "promisify-func": "0.0.1"
+    "promisify-func": "0.0.3"
   },
   "keywords": [
     "delay",
