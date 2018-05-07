@@ -57,6 +57,23 @@ describe('delay-promise-func', function(){
         })
     })
 
+    it('should return Promise anyway (undefined -> resolved Promise)', ()=> {
+        const d = deferred(()=>{}, 100);
+
+        return d().then(res => {
+            assert.equal( res, undefined);
+        })
+    })
+
+    it('should return Promise anyway (null -> resolved Promise)', ()=> {
+        const d = deferred(()=>{return null}, 100);
+
+        return d().then(res => {
+            assert.equal( res, null);
+        })
+    })
+    
+
     it('should return Promise anyway (Error -> rejected Promise)', ()=> {
         const d = deferred(()=>{
             throw new Error("err");
