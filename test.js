@@ -88,4 +88,39 @@ describe('delay-promise-func', function(){
             assert.equal( err, "Error: err");
         })
     })
+
+    it('should return Promise anyway (simple value -> resolved Promise)', ()=> {
+        const d = deferred("abc", 100);
+
+        return d().then(res => {
+            assert.equal( res, "abc");
+        })
+    })
+
+    it('should return Promise anyway (simple undefined -> resolved Promise)', ()=> {
+        const d = deferred(undefined, 100);
+
+        return d().then(res => {
+            assert.equal( res, undefined);
+        })
+    })
+
+    it('should return Promise anyway (simple null -> resolved Promise)', ()=> {
+        const d = deferred(null, 100);
+
+        return d().then(res => {
+            assert.equal( res, null);
+        })
+    })
+    
+
+    it('should return Promise anyway (simple Error -> resolved Promise)', ()=> {
+        const d = deferred(new Error("err"), 100);
+
+        return d()
+        .then(res => {
+            assert.ok( res instanceof Error, "err should be instance of Error");
+            assert.equal( res, "Error: err");
+        })
+    })
 })
