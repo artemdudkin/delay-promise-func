@@ -23,7 +23,7 @@
     "webpack-cli": "^2.1.2"
   },
   "dependencies": {
-    "promisify-func": "0.0.6"
+    "promisify-func": "0.0.7"
   },
   "keywords": [
     "delay",
